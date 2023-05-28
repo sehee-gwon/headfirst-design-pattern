@@ -37,3 +37,14 @@
 **디자인 원칙**
 - 의존 역전 원칙 (Dependency Inversion Principle)
 - 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
+
+### Chapter 06. 커맨드 패턴
+**디자인 패턴**
+- 커맨드 패턴
+  - 요청하는 객체와 요청을 수행하는 객체를 분리하는 패턴이다.
+  - 이 패턴을 활용하여 실행 취소, 로그, 트랜잭션 시스템을 구현할 수 있다.
+  - 매크로 커맨드는 여러 개의 커맨드를 묶어 놓은 커맨드이다.
+  - client(고객), invoke(종업원), command(주문서), receiver(요리사) 로 이뤄진다.
+    - receiver 의 행동 메소드를 커맨드 객체로 캡슐화 할 수 있다.
+    - client 는 invoke 를 실행시키고, invoke 는 command 를 통해 최종적으로 receiver 의 행동을 호출한다.
+    - invoke, command, receiver 는 분리되어 있어 서로 어떤 일을 하는지 모른다.
