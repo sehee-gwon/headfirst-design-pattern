@@ -65,11 +65,23 @@
 
 **디자인 패턴**
 - 어댑터 패턴
-  - 클라이언트에서 특정 인터페이스를 사용할 수 없을 때, 해당 인터페이스를 사용할 수 있도록 중간에서 변환해주는 패턴이다.
+  - 특정 인터페이스를 사용할 수 없을 때, 사용 가능한 다른 인터페이스로 변환해주는 패턴이다.
   - client, target interface, adapter, adaptee 로 이뤄진다.
     - target interface = Duck, adapter = TurkeyAdapter, adaptee = Turkey
     - adapter 는 target interface 의 메소드 호출을 가로채서 adaptee 의 메소드를 호출하도록 해준다.
   - 객체 어댑터와 클래스 어댑터 두 종류로 나뉜다.
     - 객체 어댑터: adaptee 를 적용할 때 구성을 사용한다.
     - 클래스 어댑터: adaptee 를 적용할 때 상속을 사용한다. (adapter 에서 target interface, adaptee 둘 다 상속받음)
+
 - 퍼사드 패턴
+  - 서브 시스템에 속한 일련의 복잡한 인터페이스를 통합 인터페이스로 묶어 단순하게 만드는 패턴이다.
+  - client, facade 로 이뤄진다.
+    - facade = HomeTheaterFacade
+
+**디자인 원칙**
+- 최소 지식 원칙 (Principle of Least Knowledge) = 데메테르의 법칙
+- 객체 사이의 상호작용은 아주 가까운 '친구' 사이에서만 허용한다.
+  - 객체 자체
+  - 매개변수로 전달된 객체
+  - 직접 생성하거나 인스턴스를 만든 객체
+  - 객체에 속하는 구성 요소
