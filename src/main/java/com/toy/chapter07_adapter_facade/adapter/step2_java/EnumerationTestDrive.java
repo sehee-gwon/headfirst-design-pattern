@@ -1,4 +1,4 @@
-package com.toy.chapter07_adapter_facade.adapter.step2_iterator;
+package com.toy.chapter07_adapter_facade.adapter.step2_java;
 
 import java.util.List;
 
