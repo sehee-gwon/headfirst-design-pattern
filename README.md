@@ -85,3 +85,19 @@
   - 매개변수로 전달된 객체
   - 직접 생성하거나 인스턴스를 만든 객체
   - 객체에 속하는 구성 요소
+
+### Chapter 09. 반복자 패턴과 컴포지트 패턴
+분류: 구조/행동 패턴
+
+**디자인 패턴**
+- 반복자 패턴
+  - 컬렉션의 구현 방법을 노출하지 않으면서, 내부에 접근하는 방법을 제공해주는 패턴이다.
+  - 자바의 Iterator 인터페이스는 이 패턴을 사용하였다.
+  - client, aggregate, iterator 로 이뤄진다.
+    - client = Waitress, aggregate = Menu, iterator = Iterator
+
+- 컴포지트 패턴
+
+**디자인 원칙**
+- 단일 책임 원칙 (Single Responsibility Principle)
+- 하나의 객체는 하나의 역할만 맡아야 한다.
