@@ -1,6 +1,6 @@
 package com.toy.chapter09_iterator_composite.iterator.step2_iterator_separation;
 
-import com.toy.chapter09_iterator_composite.MenuItem;
+import com.toy.chapter09_iterator_composite.iterator.MenuItem;
 
 public class DinerMenuIterator implements Iterator {
     MenuItem[] items;

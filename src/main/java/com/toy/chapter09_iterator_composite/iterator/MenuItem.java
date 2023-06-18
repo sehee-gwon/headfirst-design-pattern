@@ -1,4 +1,4 @@
-package com.toy.chapter09_iterator_composite;
+package com.toy.chapter09_iterator_composite.iterator;
 
 public class MenuItem {
     String name;

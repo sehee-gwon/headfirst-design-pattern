@@ -1,6 +1,6 @@
 package com.toy.chapter09_iterator_composite.iterator.step1_before;
 
-import com.toy.chapter09_iterator_composite.MenuItem;
+import com.toy.chapter09_iterator_composite.iterator.MenuItem;
 
 public class DinerMenu {
     static final int MAX_ITEMS = 6;
