@@ -97,6 +97,11 @@
     - client = Waitress, aggregate = Menu, iterator = Iterator
 
 - 컴포지트 패턴
+  - 객체를 트리 구조로 구성해서 부분-전체 계층 구조를 구현한다. 재귀적인 구조의 패턴이다.
+  - 클라이언트에서 개별 객체와 복합 객체를 똑같은 방법으로 다룰 수 있다.
+  - client, component, leaf, composite 로 이뤄진다.
+    - client = Waitress, component = MenuComponent, leaf = MenuItem, composite = Menu
+    - leaf 는 구성 요소를 포함하지 않는 객체이며, composite 는 다른 구성 요소를 포함하는 객체이다.
 
 **디자인 원칙**
 - 단일 책임 원칙 (Single Responsibility Principle)
