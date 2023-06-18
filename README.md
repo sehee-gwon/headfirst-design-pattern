@@ -5,6 +5,10 @@
 
 **디자인 패턴**
 - 전략 패턴
+  - 알고리즘군을 정의하고 캡슐화하여, 각각의 알고리즘군을 수정해서 쓸 수 있게 해주는 패턴이다.
+  - client, context, strategy 로 이뤄진다.
+    - client = MiniDuckSimulator, context = Duck, strategy = FlyBehavior, QuackBehavior
+    - 오리의 행동들을 일련의 행동으로 생각하는 대신, 알고리즘군으로 생각한다.
 
 **디자인 원칙**
 - 애플리케이션에서 달라지는 부분을 찾아내고, 달라지지 않는 부분과 분리한다.
@@ -16,6 +20,10 @@
 
 **디자인 패턴**
 - 옵저버 패턴
+  - 한 객체의 상태가 바뀌면, 그 객체에 의존하는 다른 객체에게 연락할 수 있는 패턴이다.
+  - 연락을 받은 객체는 자동으로 내용이 갱신되는 방식으로, 일대다 (one-to-many) 의존성을 정의한다.
+  - client, subject, observer 로 이뤄진다.
+    - client = WeatherStation, subject = WeatherData, observer = ForecastDisplay, HeatIndexDisplay
 
 **디자인 원칙**
 - 느슨한 결합 (Loose Coupling)
@@ -26,6 +34,10 @@
 
 **디자인 패턴**
 - 데코레이터 패턴
+  - 객체에 추가 요소를 동적으로 더할 수 있는 패턴이다. (더할 수 있는 개수는 제한이 없다.)
+  - 이 패턴을 사용하면 서브클래스를 만드는 것보다 훨씬 유연하게 기능을 확장할 수 있다.
+  - client, component, decorator 로 이뤄진다.
+    - client = StarBuzCoffee, component = Beverage, decorator = CondimentDecorator
 
 **디자인 원칙**
 - 개방 폐쇄 원칙 (Open-Closed Principle)
@@ -34,13 +46,18 @@
 ### Chapter 04. 팩토리 패턴
 분류: 생성 패턴
 
-**디자인 패턴**
+**디자인 패턴**  
+클래스의 인스턴스를 생성하는 인터페이스를 제공하는 패턴이다.
 - 팩토리 메소드 패턴
   - 상속을 통한 클래스 확장으로 구현한다.
-  - 제품이 추가되면 서브 클래스를 만들어야 하므로, 클래스의 수가 늘어나는 단점이 있다.
+  - 제품이 추가되면 서브 클래스를 만들어야 하므로, 클래스의 수가 늘어나는 단점이 있다
+  - client, creator, product 로 이뤄진다.
+    - client = PizzaTestDrive, creator = PizzaStore, product = Pizza
 - 추상 팩토리 패턴
   - 구성을 통한 인스턴스 전달로 구현한다.
   - 제품이 추가되면 메소드를 추가해야 하므로, 인터페이스를 수정해야 하는 단점이 있다.
+  - client, abstractFactory, abstractProduct 로 이뤄진다.
+    - client = PizzaTestDrive, abstractFactory = PizzaIngredientFactory, abstractProduct = Dough, Source, Pepperoni
 
 **디자인 원칙**
 - 의존 역전 원칙 (Dependency Inversion Principle)
@@ -55,7 +72,8 @@
   - 이 패턴을 활용하여 실행 취소, 로그, 트랜잭션 시스템을 구현할 수 있다.
   - 매크로 커맨드는 여러 개의 커맨드를 묶어 놓은 커맨드이다.
   - client, invoke, command, receiver 로 이뤄진다.
-    - client = 고객, invoke = 종업원, command = 주문서, receiver = 요리사
+    - client = RemoteLoader, invoke = RemoteLoader, command = LightOffCommand, LightOnCommand, receiver = Light
+    - client = 고객, invoke = 종업원, command = 주문서, receiver = 요리사로 비유된다.
     - receiver 의 행동 메소드를 커맨드 객체로 캡슐화 할 수 있다.
     - client 는 invoke 를 실행시키고, invoke 는 command 를 통해 최종적으로 receiver 의 행동을 호출한다.
     - invoke, command, receiver 는 분리되어 있어 서로 어떤 일을 하는지 모른다.
@@ -67,7 +85,7 @@
 - 어댑터 패턴
   - 특정 인터페이스를 사용할 수 없을 때, 사용 가능한 다른 인터페이스로 변환해주는 패턴이다.
   - client, target interface, adapter, adaptee 로 이뤄진다.
-    - target interface = Duck, adapter = TurkeyAdapter, adaptee = Turkey
+    - client = DuckTestDrive, target interface = Duck, adapter = TurkeyAdapter, adaptee = Turkey
     - adapter 는 target interface 의 메소드 호출을 가로채서 adaptee 의 메소드를 호출하도록 해준다.
   - 객체 어댑터와 클래스 어댑터 두 종류로 나뉜다.
     - 객체 어댑터: adaptee 를 적용할 때 구성을 사용한다.
@@ -76,7 +94,7 @@
 - 퍼사드 패턴
   - 서브 시스템에 속한 일련의 복잡한 인터페이스를 통합 인터페이스로 묶어 단순하게 만드는 패턴이다.
   - client, facade 로 이뤄진다.
-    - facade = HomeTheaterFacade
+    - client = HomeTheaterTestDrive, facade = HomeTheaterFacade
 
 **디자인 원칙**
 - 최소 지식 원칙 (Principle of Least Knowledge) = 데메테르의 법칙
