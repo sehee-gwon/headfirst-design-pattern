@@ -30,7 +30,7 @@ public class SoldState implements State {
 
         if (gumballMachine.getCount() == 0) {
             System.out.println("매진되었습니다.");
-            gumballMachine.setState(gumballMachine.getSoldState());
+            gumballMachine.setState(gumballMachine.getSoldOutState());
         } else {
             gumballMachine.setState(gumballMachine.getNoQuarterState());
         }
