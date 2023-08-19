@@ -5,7 +5,7 @@ import com.toy.chapter10_state.step3_refactoring.GumballMachine;
 public class SoldState extends State {
     @Override
     public void refill(GumballMachine gumballMachine) {
-        // not extends
+        // not implements
     }
 
     @Override

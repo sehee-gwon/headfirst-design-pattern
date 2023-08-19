@@ -12,7 +12,7 @@ public class WinnerState extends State {
 
     @Override
     public void refill(GumballMachine gumballMachine) {
-        // not extends
+        // not implements
     }
 
     @Override

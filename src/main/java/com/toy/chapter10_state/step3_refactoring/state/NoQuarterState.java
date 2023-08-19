@@ -11,7 +11,7 @@ public class NoQuarterState extends State {
 
     @Override
     public void refill(GumballMachine gumballMachine) {
-        // not extends
+        // not implements
     }
 
     @Override
