@@ -124,3 +124,16 @@
 **디자인 원칙**
 - 단일 책임 원칙 (Single Responsibility Principle)
 - 하나의 객체는 하나의 역할만 맡아야 한다.
+ 
+### Chapter 10. 상태 패턴
+분류: 행동 패턴
+
+**디자인 패턴**
+- 상태 패턴
+  - 객체의 내부 상태가 바뀜에 따라서 객체의 행동을 바꿀 수 있는 패턴이다.
+  - client, context, state 로 이뤄진다.
+    - client = GumballMachineTestDrive, context = GumballMachine, state = State
+    - 뽑기 기계의 상태를 나누어 별도의 클래스로 캡슐화한다.
+  - 전략 패턴과 비슷하지만 용도가 다르다.
+    - 전략 패턴: 클라이언트가 context 객체에게 어떤 전략 객체를 사용할지 지정해준다.  
+    - 상태 패턴: 객체의 내부 상태에 따라 context 객체의 행동이 자연스럽게 바뀐다. 클라이언트는 상태 객체를 몰라도 된다.
